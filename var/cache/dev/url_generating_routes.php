@@ -15,6 +15,7 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
+    'diploma' => [[], ['_controller' => 'App\\Controller\\DiplomaController::index'], [], [['text', '/diploma']], [], []],
     'api_posts_get' => [[], ['_controller' => 'App\\Controller\\PostController::getAll'], [], [['text', '/api/posts']], [], []],
     'api_post_get_one' => [['id'], ['_controller' => 'App\\Controller\\PostController::getOne'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/post']], [], []],
     'api_post_post' => [[], ['_controller' => 'App\\Controller\\PostController::post'], [], [['text', '/api/post']], [], []],
@@ -25,4 +26,7 @@ return [
     'api_profile_post' => [[], ['_controller' => 'App\\Controller\\ProfileController::profile'], [], [['text', '/api/profile']], [], []],
     'api_profile_put' => [['id'], ['_controller' => 'App\\Controller\\ProfileController::putAndPatch'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/api/profile']], [], []],
     'api_profile_delete' => [['id'], ['_controller' => 'App\\Controller\\ProfileController::delete'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/api/profile']], [], []],
+    'project' => [[], ['_controller' => 'App\\Controller\\ProjectController::index'], [], [['text', '/project']], [], []],
+    'social' => [[], ['_controller' => 'App\\Controller\\SocialController::index'], [], [['text', '/social']], [], []],
+    'api_technos_get' => [[], ['_controller' => 'App\\Controller\\TechnoController::getAll'], [], [['text', '/api/technos']], [], []],
 ];

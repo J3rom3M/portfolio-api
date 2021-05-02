@@ -1,9 +1,0 @@
-aa6f38,127.0.0.1,GET,http://localhost:3000/api/posts,1619701899,,200
-933a2a,127.0.0.1,GET,http://localhost:3000/api/post/2,1619719232,,200
-7ec955,127.0.0.1,GET,http://localhost:3000/api/posts,1619720299,,200
-25390e,127.0.0.1,GET,http://localhost:3000/api/post/10,1619720311,,200
-28bb34,127.0.0.1,GET,http://localhost:3000/api/profiles,1619721593,651917,500
-651917,127.0.0.1,GET,http://localhost:3000/api/profiles,1619721594,,500
-78da5d,127.0.0.1,GET,http://localhost:3000/api/profiles,1619721729,7e13a1,500
-7e13a1,127.0.0.1,GET,http://localhost:3000/api/profiles,1619721729,,500
-1608ef,127.0.0.1,GET,http://localhost:3000/api/profile/1,1619721741,,404

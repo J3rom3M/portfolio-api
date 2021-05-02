@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProfileRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -56,11 +58,15 @@ class Profile
     private $title;
 
     /**
-     * @ORM\Column(type="array")
-     * @Groups("profiles_get")
-     * @Assert\NotBlank()
+     * @ORM\ManyToMany(targetEntity=Diplomas::class, mappedBy="profile")
+     * @Groups({"diplomas_get", "profiles_get"})
      */
-    private $diplomas = [];
+    private $diplomas;
+
+    public function __construct()
+    {
+        $this->diplomas = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -127,15 +133,31 @@ class Profile
         return $this;
     }
 
-    public function getDiplomas(): ?array
+    /**
+     * @return Collection|Diplomas[]
+     */
+    public function getDiplomas(): Collection
     {
         return $this->diplomas;
     }
 
-    public function setDiplomas(array $diplomas): self
+    public function addDiploma(Diplomas $diploma): self
     {
-        $this->diplomas = $diplomas;
+        if (!$this->diplomas->contains($diploma)) {
+            $this->diplomas[] = $diploma;
+            $diploma->addProfile($this);
+        }
 
         return $this;
     }
+
+    public function removeDiploma(Diplomas $diploma): self
+    {
+        if ($this->diplomas->removeElement($diploma)) {
+            $diploma->removeProfile($this);
+        }
+
+        return $this;
+    }
+
 }

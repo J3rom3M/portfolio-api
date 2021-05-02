@@ -13,10 +13,14 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/diploma' => [[['_route' => 'diploma', '_controller' => 'App\\Controller\\DiplomaController::index'], null, null, null, false, false, null]],
         '/api/posts' => [[['_route' => 'api_posts_get', '_controller' => 'App\\Controller\\PostController::getAll'], null, ['GET' => 0], null, false, false, null]],
         '/api/post' => [[['_route' => 'api_post_post', '_controller' => 'App\\Controller\\PostController::post'], null, ['POST' => 0], null, false, false, null]],
         '/api/profiles' => [[['_route' => 'api_profiles_get', '_controller' => 'App\\Controller\\ProfileController::getAll'], null, ['GET' => 0], null, false, false, null]],
         '/api/profile' => [[['_route' => 'api_profile_post', '_controller' => 'App\\Controller\\ProfileController::profile'], null, ['POST' => 0], null, false, false, null]],
+        '/project' => [[['_route' => 'project', '_controller' => 'App\\Controller\\ProjectController::index'], null, null, null, false, false, null]],
+        '/social' => [[['_route' => 'social', '_controller' => 'App\\Controller\\SocialController::index'], null, null, null, false, false, null]],
+        '/api/technos' => [[['_route' => 'api_technos_get', '_controller' => 'App\\Controller\\TechnoController::getAll'], null, ['GET' => 0], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

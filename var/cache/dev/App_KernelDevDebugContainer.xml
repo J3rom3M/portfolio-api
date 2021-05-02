@@ -398,6 +398,13 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Controller\DiplomaController" class="App\Controller\DiplomaController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\DiplomaController"/>
+      </call>
+    </service>
     <service id="App\Controller\PostController" class="App\Controller\PostController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -412,12 +419,37 @@
         <argument type="service" id=".service_locator.5nX7ca3.App\Controller\ProfileController"/>
       </call>
     </service>
+    <service id="App\Controller\ProjectController" class="App\Controller\ProjectController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\ProjectController"/>
+      </call>
+    </service>
+    <service id="App\Controller\SocialController" class="App\Controller\SocialController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\SocialController"/>
+      </call>
+    </service>
+    <service id="App\Controller\TechnoController" class="App\Controller\TechnoController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\TechnoController"/>
+      </call>
+    </service>
     <service id="App\Form\PostType" class="App\Form\PostType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Normalizer\EntityNormalizer" class="App\Normalizer\EntityNormalizer" autowire="true" autoconfigure="true">
       <tag name="serializer.normalizer"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
+    </service>
+    <service id="App\Repository\DiplomasRepository" class="App\Repository\DiplomasRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -4353,7 +4385,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.sQEx3Xq"/>
+      <argument type="service" id=".service_locator.drJV6Jh"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5528,16 +5560,30 @@
       <tag name="twig.extension"/>
       <argument type="service" id="knp_paginator.helper.processor"/>
     </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\DiplomaController" class="App\Controller\DiplomaController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\DiplomaController" class="App\Controller\DiplomaController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\DiplomaController" class="App\Controller\DiplomaController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PostController" class="App\Controller\PostController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PostController" class="App\Controller\PostController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\PostController" class="App\Controller\PostController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProfileController" class="App\Controller\ProfileController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProfileController" class="App\Controller\ProfileController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProfileController" class="App\Controller\ProfileController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectController" class="App\Controller\ProjectController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectController" class="App\Controller\ProjectController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectController" class="App\Controller\ProjectController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SocialController" class="App\Controller\SocialController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SocialController" class="App\Controller\SocialController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\SocialController" class="App\Controller\SocialController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\TechnoController" class="App\Controller\TechnoController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\TechnoController" class="App\Controller\TechnoController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\TechnoController" class="App\Controller\TechnoController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PostType" class="App\Form\PostType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\PostType" class="App\Form\PostType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Serializer\Normalizer\DenormalizerInterface.0.App\Normalizer\EntityNormalizer" class="App\Normalizer\EntityNormalizer" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Normalizer\EntityNormalizer" class="App\Normalizer\EntityNormalizer" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DiplomasRepository" class="App\Repository\DiplomasRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\DiplomasRepository" class="App\Repository\DiplomasRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProfileRepository" class="App\Repository\ProfileRepository" autowire="true" abstract="true"/>
@@ -5918,7 +5964,13 @@
         <argument key="em" type="service" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.M5Z2aLg" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.gKF4aO4" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="technosRepository" type="service" id="App\Repository\TechnosRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.HoNGOSd" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\PostController::delete" type="service" id=".service_locator.GgAWaCI"/>
@@ -5929,6 +5981,7 @@
         <argument key="App\Controller\ProfileController::getAll" type="service" id=".service_locator.vkQyYwq"/>
         <argument key="App\Controller\ProfileController::profile" type="service" id=".service_locator.MosDl4q"/>
         <argument key="App\Controller\ProfileController::putAndPatch" type="service" id=".service_locator.f2iTGue"/>
+        <argument key="App\Controller\TechnoController::getAll" type="service" id=".service_locator.gKF4aO4"/>
         <argument key="App\Kernel::loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::terminate" type="service" id=".service_locator.KfwZsne"/>
@@ -5943,6 +5996,7 @@
         <argument key="App\Controller\ProfileController:getAll" type="service" id=".service_locator.vkQyYwq"/>
         <argument key="App\Controller\ProfileController:profile" type="service" id=".service_locator.MosDl4q"/>
         <argument key="App\Controller\ProfileController:putAndPatch" type="service" id=".service_locator.f2iTGue"/>
+        <argument key="App\Controller\TechnoController:getAll" type="service" id=".service_locator.gKF4aO4"/>
         <argument key="kernel:loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:terminate" type="service" id=".service_locator.KfwZsne"/>
@@ -6179,9 +6233,10 @@
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.sQEx3Xq" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.drJV6Jh" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\DiplomasRepository" type="service" id="App\Repository\DiplomasRepository"/>
         <argument key="App\Repository\PostRepository" type="service" id="App\Repository\PostRepository"/>
         <argument key="App\Repository\ProfileRepository" type="service" id="App\Repository\ProfileRepository"/>
         <argument key="App\Repository\ProjectsRepository" type="service" id="App\Repository\ProjectsRepository"/>
@@ -6251,6 +6306,12 @@
         <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.5nX7ca3.App\Controller\DiplomaController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\DiplomaController"/>
+      <argument>App\Controller\DiplomaController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5nX7ca3" method="withContext"/>
+    </service>
     <service id=".service_locator.5nX7ca3.App\Controller\PostController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\PostController"/>
       <argument>App\Controller\PostController</argument>
@@ -6260,6 +6321,24 @@
     <service id=".service_locator.5nX7ca3.App\Controller\ProfileController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ProfileController"/>
       <argument>App\Controller\ProfileController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5nX7ca3" method="withContext"/>
+    </service>
+    <service id=".service_locator.5nX7ca3.App\Controller\ProjectController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectController"/>
+      <argument>App\Controller\ProjectController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5nX7ca3" method="withContext"/>
+    </service>
+    <service id=".service_locator.5nX7ca3.App\Controller\SocialController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\SocialController"/>
+      <argument>App\Controller\SocialController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5nX7ca3" method="withContext"/>
+    </service>
+    <service id=".service_locator.5nX7ca3.App\Controller\TechnoController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\TechnoController"/>
+      <argument>App\Controller\TechnoController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.5nX7ca3" method="withContext"/>
     </service>
@@ -6428,12 +6507,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.M5Z2aLg"/>
+      <argument type="service" id=".service_locator.HoNGOSd"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.M5Z2aLg"/>
+      <argument type="service" id=".service_locator.HoNGOSd"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6866,7 +6945,7 @@
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.M5Z2aLg"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.HoNGOSd"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>
