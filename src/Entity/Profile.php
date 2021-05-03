@@ -59,7 +59,7 @@ class Profile
 
     /**
      * @ORM\ManyToMany(targetEntity=Diplomas::class, mappedBy="profile")
-     * @Groups({"diplomas_get", "profiles_get"})
+     * @Groups("profiles_get")
      */
     private $diplomas;
 

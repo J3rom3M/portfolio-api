@@ -29,4 +29,8 @@ return [
     'project' => [[], ['_controller' => 'App\\Controller\\ProjectController::index'], [], [['text', '/project']], [], []],
     'social' => [[], ['_controller' => 'App\\Controller\\SocialController::index'], [], [['text', '/social']], [], []],
     'api_technos_get' => [[], ['_controller' => 'App\\Controller\\TechnoController::getAll'], [], [['text', '/api/technos']], [], []],
+    'api_techno_get_one' => [['id'], ['_controller' => 'App\\Controller\\TechnoController::getOne'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/techno']], [], []],
+    'api_techno_post' => [[], ['_controller' => 'App\\Controller\\TechnoController::techno'], [], [['text', '/api/techno']], [], []],
+    'api_techno_put' => [['id'], ['_controller' => 'App\\Controller\\TechnoController::putAndPatch'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/api/techno']], [], []],
+    'api_techno_delete' => [['id'], ['_controller' => 'App\\Controller\\TechnoController::delete'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/api/techno']], [], []],
 ];

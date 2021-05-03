@@ -1054,7 +1054,7 @@ return [[
 
 0 => 'N;',
 1 => [],
-2 => 1619983195,
+2 => 1620053293,
 3 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -1382,7 +1382,6 @@ return [[
             'Symfony\\Component\\Serializer\\Annotation\\Groups' => [
                 'groups' => [
                     1 => [
-                        'diplomas_get',
                         'profiles_get',
                     ],
                 ],

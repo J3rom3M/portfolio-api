@@ -5970,7 +5970,25 @@
         <argument key="technosRepository" type="service" id="App\Repository\TechnosRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.HoNGOSd" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.phkcu6x" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
+    <service id=".service_locator.vy.A3AP" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="em" type="service" id="doctrine.orm.default_entity_manager"/>
+        <argument key="serializer" type="service" id="serializer"/>
+        <argument key="validator" type="service" id="debug.validator"/>
+      </argument>
+    </service>
+    <service id=".service_locator.dpwtab0" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="em" type="service" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.MP5TtLZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\PostController::delete" type="service" id=".service_locator.GgAWaCI"/>
@@ -5981,7 +5999,10 @@
         <argument key="App\Controller\ProfileController::getAll" type="service" id=".service_locator.vkQyYwq"/>
         <argument key="App\Controller\ProfileController::profile" type="service" id=".service_locator.MosDl4q"/>
         <argument key="App\Controller\ProfileController::putAndPatch" type="service" id=".service_locator.f2iTGue"/>
+        <argument key="App\Controller\TechnoController::delete" type="service" id=".service_locator.dpwtab0"/>
         <argument key="App\Controller\TechnoController::getAll" type="service" id=".service_locator.gKF4aO4"/>
+        <argument key="App\Controller\TechnoController::putAndPatch" type="service" id=".service_locator.vy.A3AP"/>
+        <argument key="App\Controller\TechnoController::techno" type="service" id=".service_locator.MosDl4q"/>
         <argument key="App\Kernel::loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::terminate" type="service" id=".service_locator.KfwZsne"/>
@@ -5996,7 +6017,10 @@
         <argument key="App\Controller\ProfileController:getAll" type="service" id=".service_locator.vkQyYwq"/>
         <argument key="App\Controller\ProfileController:profile" type="service" id=".service_locator.MosDl4q"/>
         <argument key="App\Controller\ProfileController:putAndPatch" type="service" id=".service_locator.f2iTGue"/>
+        <argument key="App\Controller\TechnoController:delete" type="service" id=".service_locator.dpwtab0"/>
         <argument key="App\Controller\TechnoController:getAll" type="service" id=".service_locator.gKF4aO4"/>
+        <argument key="App\Controller\TechnoController:putAndPatch" type="service" id=".service_locator.vy.A3AP"/>
+        <argument key="App\Controller\TechnoController:techno" type="service" id=".service_locator.MosDl4q"/>
         <argument key="kernel:loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:terminate" type="service" id=".service_locator.KfwZsne"/>
@@ -6507,12 +6531,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.HoNGOSd"/>
+      <argument type="service" id=".service_locator.MP5TtLZ"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.HoNGOSd"/>
+      <argument type="service" id=".service_locator.MP5TtLZ"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6945,7 +6969,7 @@
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.HoNGOSd"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.MP5TtLZ"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

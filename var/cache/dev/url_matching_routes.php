@@ -21,6 +21,7 @@ return [
         '/project' => [[['_route' => 'project', '_controller' => 'App\\Controller\\ProjectController::index'], null, null, null, false, false, null]],
         '/social' => [[['_route' => 'social', '_controller' => 'App\\Controller\\SocialController::index'], null, null, null, false, false, null]],
         '/api/technos' => [[['_route' => 'api_technos_get', '_controller' => 'App\\Controller\\TechnoController::getAll'], null, ['GET' => 0], null, false, false, null]],
+        '/api/techno' => [[['_route' => 'api_techno_post', '_controller' => 'App\\Controller\\TechnoController::techno'], null, ['POST' => 0], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -39,17 +40,25 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/api/p(?'
-                    .'|ost/(?'
-                        .'|([^/]++)(*:193)'
-                        .'|(\\d+)(?'
-                            .'|(*:209)'
+                .'|/api/(?'
+                    .'|p(?'
+                        .'|ost/(?'
+                            .'|([^/]++)(*:196)'
+                            .'|(\\d+)(?'
+                                .'|(*:212)'
+                            .')'
+                        .')'
+                        .'|rofile/(?'
+                            .'|([^/]++)(*:240)'
+                            .'|(\\d+)(?'
+                                .'|(*:256)'
+                            .')'
                         .')'
                     .')'
-                    .'|rofile/(?'
-                        .'|([^/]++)(*:237)'
+                    .'|techno/(?'
+                        .'|([^/]++)(*:285)'
                         .'|(\\d+)(?'
-                            .'|(*:253)'
+                            .'|(*:301)'
                         .')'
                     .')'
                 .')'
@@ -63,15 +72,20 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        193 => [[['_route' => 'api_post_get_one', '_controller' => 'App\\Controller\\PostController::getOne'], ['id'], ['GET' => 0], null, false, true, null]],
-        209 => [
+        196 => [[['_route' => 'api_post_get_one', '_controller' => 'App\\Controller\\PostController::getOne'], ['id'], ['GET' => 0], null, false, true, null]],
+        212 => [
             [['_route' => 'api_post_put', '_controller' => 'App\\Controller\\PostController::putAndPatch'], ['id'], ['PUT' => 0, 'PATCH' => 1], null, false, true, null],
             [['_route' => 'api_post_delete', '_controller' => 'App\\Controller\\PostController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
         ],
-        237 => [[['_route' => 'api_profile_get_one', '_controller' => 'App\\Controller\\ProfileController::getOne'], ['id'], ['GET' => 0], null, false, true, null]],
-        253 => [
+        240 => [[['_route' => 'api_profile_get_one', '_controller' => 'App\\Controller\\ProfileController::getOne'], ['id'], ['GET' => 0], null, false, true, null]],
+        256 => [
             [['_route' => 'api_profile_put', '_controller' => 'App\\Controller\\ProfileController::putAndPatch'], ['id'], ['PUT' => 0, 'PATCH' => 1], null, false, true, null],
             [['_route' => 'api_profile_delete', '_controller' => 'App\\Controller\\ProfileController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
+        ],
+        285 => [[['_route' => 'api_techno_get_one', '_controller' => 'App\\Controller\\TechnoController::getOne'], ['id'], ['GET' => 0], null, false, true, null]],
+        301 => [
+            [['_route' => 'api_techno_put', '_controller' => 'App\\Controller\\TechnoController::putAndPatch'], ['id'], ['PUT' => 0, 'PATCH' => 1], null, false, true, null],
+            [['_route' => 'api_techno_delete', '_controller' => 'App\\Controller\\TechnoController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

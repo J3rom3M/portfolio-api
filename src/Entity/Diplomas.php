@@ -18,25 +18,25 @@ class Diplomas
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups("diplomas_get")
+     * @Groups("profiles_get")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * ("diplomas_get")
+     * @Groups("profiles_get")
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * ("diplomas_get")
+     * @Groups("profiles_get")
      */
     private $content;
 
     /**
      * @ORM\ManyToMany(targetEntity=Profile::class, inversedBy="diplomas")
-     * ("profiles_get")
+     * 
      */
     private $profile;
 
