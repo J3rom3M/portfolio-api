@@ -1,2 +1,8 @@
-587a2e,127.0.0.1,GET,http://localhost:3000/api/profiles,1620046871,,200
-54a0c0,127.0.0.1,GET,http://localhost:3000/api/profiles,1620111835,,200
+36b433,127.0.0.1,GET,http://localhost:3000/api/diplomas,1621458851,,200
+10990a,127.0.0.1,GET,http://localhost:3000/api/profiles,1621458854,,200
+65c3bf,127.0.0.1,GET,http://localhost:3000/api/profiles,1621458862,,200
+062f3f,127.0.0.1,GET,http://localhost:3000/api/diplomas,1621458862,,200
+880e56,127.0.0.1,GET,http://localhost:3000/api/technos,1621459120,,200
+16b2f0,127.0.0.1,GET,http://localhost:3000/api/technos,1621459281,,200
+8f29a7,127.0.0.1,GET,http://localhost:3000/api/profiles,1621459281,,200
+361af2,127.0.0.1,GET,http://localhost:3000/api/diplomas,1621459281,,200

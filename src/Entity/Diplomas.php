@@ -18,19 +18,19 @@ class Diplomas
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups("profiles_get")
+     * @Groups({"profiles_get", "diplomas_get"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups("profiles_get")
+     * @Groups({"profiles_get", "diplomas_get"})
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups("profiles_get")
+     * @Groups({"profiles_get", "diplomas_get"})
      */
     private $content;
 
